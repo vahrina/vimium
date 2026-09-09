@@ -2,6 +2,7 @@
   "version": "5",
   "specifiers": {
     "jsr:@b-fuze/deno-dom@~0.1.49": "0.1.49",
+    "jsr:@deno/installer-shell-setup@*": "0.3.4",
     "jsr:@denosaurs/plug@1.0.3": "1.0.3",
     "jsr:@std/assert@~0.213.1": "0.213.1",
     "jsr:@std/cli@^1.0.8": "1.0.9",
@@ -32,6 +33,9 @@
       "dependencies": [
         "jsr:@denosaurs/plug"
       ]
+    },
+    "@deno/installer-shell-setup@0.3.4": {
+      "integrity": "48665d1a737d487cce6874bc97bba70a5aeffa7053aca3f60df93c6fab8963b4"
     },
     "@denosaurs/plug@1.0.3": {
       "integrity": "b010544e386bea0ff3a1d05e0c88f704ea28cbd4d753439c2f1ee021a85d4640",

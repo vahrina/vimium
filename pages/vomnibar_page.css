@@ -11,7 +11,7 @@ ul {
   width: calc(100% - 20px); /* adjusted to keep border radius and box-shadow visible*/
   top: 8px;
   left: 8px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: monospace;
   color: var(--vimium-background-text-color);
   background: #f1f1f1;
   text-align: left;

@@ -41,7 +41,7 @@ tr.vimium-reset {
   cursor: auto;
   display: inline;
   float: none;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: monospace;
   font-size: inherit;
   font-style: normal;
   font-variant: normal;
@@ -121,7 +121,7 @@ div.internal-vimium-hint-marker {
 
 div.internal-vimium-hint-marker span {
   color: #302505;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: monospace;
   font-weight: bold;
   font-size: 11px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
@@ -216,7 +216,7 @@ iframe.vomnibar-frame {
   /* TODO(philc): Why are we doing this negative margin, rather than just using right: 20% ? */
   margin: 0 0 0 -40%;
   border: none;
-  font-family: sans-serif;
+  font-family: monospace;
   z-index: 2147483647;
 }
 
