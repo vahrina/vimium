@@ -73,74 +73,74 @@ class HintDescriptor {
 const isMac = KeyboardUtils.platform === "Mac";
 const OPEN_IN_CURRENT_TAB = {
   name: "open-in-current-tab",
-  indicator: "Open link in current tab",
+  indicator: "open link in current tab",
 };
 const OPEN_IN_NEW_BG_TAB = {
   name: "open-in-new-background-tab",
-  indicator: "Open link in new tab",
+  indicator: "open link in new tab",
   clickModifiers: { metaKey: isMac, ctrlKey: !isMac },
 };
 const OPEN_IN_NEW_FG_TAB = {
   name: "open-in-new-foreground-tab",
-  indicator: "Open link in new tab and switch to it",
+  indicator: "open link in new tab and switch to it",
   clickModifiers: { shiftKey: true, metaKey: isMac, ctrlKey: !isMac },
 };
 const OPEN_WITH_QUEUE = {
   name: "open-with-queue",
-  indicator: "Open multiple links in new tabs",
+  indicator: "open multiple links in new tabs",
   clickModifiers: { metaKey: isMac, ctrlKey: !isMac },
 };
 const COPY_LINK_URL = {
   name: "copy-link-url",
-  indicator: "Copy link URL to Clipboard",
+  indicator: "copy link url to clipboard",
   linkActivator(link) {
     if (link.href != null) {
       let url = link.href;
       if (url.slice(0, 7) === "mailto:") url = url.slice(7);
       HUD.copyToClipboard(url);
       if (28 < url.length) url = url.slice(0, 26) + "....";
-      HUD.show(`Yanked ${url}`, 2000);
+      HUD.show(`yanked ${url}`, 2000);
     } else {
-      HUD.show("No link to yank.", 2000);
+      HUD.show("no link to yank", 2000);
     }
   },
 };
 const OPEN_INCOGNITO = {
   name: "open-incognito",
-  indicator: "Open link in incognito window",
+  indicator: "open link in incognito window",
   linkActivator(link) {
     chrome.runtime.sendMessage({ handler: "openUrlInIncognito", url: link.href });
   },
 };
 const DOWNLOAD_LINK_URL = {
   name: "download-link-url",
-  indicator: "Download link URL",
+  indicator: "download link url",
   clickModifiers: { altKey: true, ctrlKey: false, metaKey: false },
 };
 const COPY_LINK_TEXT = {
   name: "copy-link-text",
-  indicator: "Copy link text",
+  indicator: "copy link text",
   linkActivator(link) {
     let text = link.textContent;
     if (text.length > 0) {
       HUD.copyToClipboard(text);
       if (28 < text.length) text = text.slice(0, 26) + "....";
-      HUD.show(`Yanked ${text}`, 2000);
+      HUD.show(`yanked ${text}`, 2000);
     } else {
-      HUD.show("No text to yank.", 2000);
+      HUD.show("no text to yank", 2000);
     }
   },
 };
 const HOVER_LINK = {
   name: "hover-link",
-  indicator: "Hover link",
+  indicator: "hover link",
   linkActivator(link) {
     new HoverMode(link);
   },
 };
 const FOCUS_LINK = {
   name: "focus-link",
-  indicator: "Focus link",
+  indicator: "focus link",
   linkActivator(link) {
     link.focus();
   },
@@ -192,7 +192,7 @@ const HintCoordinator = {
     this.cacheAllKeydownEvents = cacheAllKeydownEvents = new CacheAllKeydownEvents({
       name: "link-hints/suppress-keyboard-events",
       singleton: "link-hints-mode",
-      indicator: "Collecting hints...",
+      indicator: "collecting hints...",
       exitOnEscape: true,
     });
     // FIXME(smblott) Global link hints is currently insufficiently reliable. If the mode above is
@@ -378,7 +378,7 @@ class LinkHintsMode {
     this.confirming = null;
 
     if (hintDescriptors.length === 0) {
-      HUD.show("No links to select.", 2000);
+      HUD.show("no links to select", 2000);
       return;
     }
 
@@ -479,8 +479,7 @@ class LinkHintsMode {
       const typedCharacters = this.markerMatcher.linkTextKeystrokeQueue
         ? this.markerMatcher.linkTextKeystrokeQueue.join("")
         : "";
-      const indicator = this.mode.indicator + (typedCharacters ? `: \"${typedCharacters}\"` : "") +
-        ".";
+      const indicator = this.mode.indicator + (typedCharacters ? `: \"${typedCharacters}\"` : "")
       this.hintMode.setIndicator(indicator);
     }
   }
@@ -801,7 +800,7 @@ class LinkHintsMode {
     this.confirmCallback = callback;
     if (Settings.get("waitForEnterForFilteredHints")) {
       this.confirming = "enter";
-      this.hintMode.setIndicator("Hit <Enter> to proceed...");
+      this.hintMode.setIndicator("hit <enter> to proceed");
     } else {
       this.confirming = "timeout";
       this.resetConfirmTimer();
@@ -858,7 +857,7 @@ class AlphabetHints {
     // Ensure we have more than 1 character to generate hint strings. With 1 character, every hint
     // will be another hint's prefix ("1", "11", ...).
     if (this.linkHintCharacters.length <= 1) {
-      throw new Error("The linkHintCharacters setting must have more than 1 character.");
+      throw new Error("the linkHintCharacters setting must have more than 1 character");
     }
     this.hintKeystrokeQueue = [];
   }
@@ -867,7 +866,7 @@ class AlphabetHints {
     const hintStrings = this.hintStrings(hintMarkers.length);
     if (hintMarkers.length != hintStrings.length) {
       // This can only happen if the user's linkHintCharacters setting is empty.
-      console.warn("Unable to generate link hint strings.");
+      console.warn("unable to generate link hint strings");
     } else {
       for (let i = 0; i < hintMarkers.length; i++) {
         const marker = hintMarkers[i];
@@ -927,7 +926,7 @@ class FilterHints {
     // Ensure we have more than 1 character to generate hint strings. With 1 character, every hint
     // will be another hint's prefix ("1", "11", ...).
     if (this.linkHintNumbers.length <= 1) {
-      throw new Error("The linkHintNumbers setting must have more than 1 character.");
+      throw new Error("the linkHintNumbers setting must have more than 1 character");
     }
 
     this.hintKeystrokeQueue = [];
@@ -1515,7 +1514,7 @@ const LocalHints = {
         }
         showLinkText = true;
       } else if ((element.getAttribute("type") || "").toLowerCase() === "file") {
-        linkText = "Choose File";
+        linkText = "choose file";
       } else if (element.type !== "password") {
         linkText = element.value;
         if (!linkText && "placeholder" in element) {
