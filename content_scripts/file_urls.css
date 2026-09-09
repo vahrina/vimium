@@ -3,4 +3,5 @@
  * prevents Vimium's search from working as expected. Here, we reset the value back to default. */
 .icon.file {
   -webkit-user-select: auto !important;
+  user-select: none;
 }
