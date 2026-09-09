@@ -167,7 +167,7 @@ const HelpDialogPage = {
   },
 
   showAdvancedCommands(visible) {
-    const caption = visible ? "Hide advanced commands" : "Show advanced commands";
+    const caption = visible ? "hide advanced commands" : "show advanced commands";
     document.querySelector("#toggle-advanced a").textContent = caption;
     if (visible) {
       HelpDialogPage.dialogElement.classList.add("show-advanced");

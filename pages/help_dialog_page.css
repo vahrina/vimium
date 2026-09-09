@@ -1,5 +1,6 @@
 body {
   font-family: monospace;
+  user-select: none;
 }
 
 #container {
@@ -20,33 +21,22 @@ body {
 }
 
 a {
+  cursor: default;
+  color: var(--vimium-link-color);
+  text-decoration: none;
+  transition: all 300ms ease;
+}
+
+a:hover {
+  color: #c3ddfb;
   text-decoration: underline;
-  color: #2f508e;
-  cursor: pointer;
+  text-decoration-color: currentColor;
 }
 
 header {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-a#close {
-  font-family: monospace;
-  font-weight: bold;
-  color: #555;
-  text-decoration: none;
-  font-size: 24px;
-  position: relative;
-  top: 3px;
-  padding-left: 5px;
-  cursor: pointer;
-}
-
-a#close:hover {
-  color: black;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 h1 {
@@ -103,10 +93,11 @@ div[data-group] {
 }
 
 div.divider {
-  height: 1px;
+  height: 2px;
   width: 100%;
   margin: 10px auto;
-  background-color: #9a9a9a;
+  background: linear-gradient(to right, transparent, #9a9a9a, transparent);
+  opacity: .7;
 }
 
 /* Advanced commands are hidden by default until "show advanced" is clicked. */

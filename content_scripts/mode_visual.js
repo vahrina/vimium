@@ -358,7 +358,7 @@ class VisualMode extends KeyHandlerMode {
 
       if ((this.selection.type !== "Range") && (this.name !== "caret")) {
         new CaretMode().init();
-        return HUD.show("no usable selection, entering caret mode...", 2500);
+        return HUD.show("no usable selection, entering caret mode", 2500);
       }
     }
   }
@@ -384,12 +384,12 @@ class VisualMode extends KeyHandlerMode {
     for (let i = 0, end = count; i < end; i++) {
       const nextQuery = FindMode.getQuery(backwards);
       if (!nextQuery) {
-        HUD.show("No query to find.", 1000);
+        HUD.show("no query to find", 1000);
         return;
       }
       if (!FindMode.execute(nextQuery, { colorSelection: false, backwards })) {
         this.movement.setSelectionRange(initialRange);
-        HUD.show(`No matches for '${FindMode.query.rawQuery}'`, 1000);
+        HUD.show(`no matches for '${FindMode.query.rawQuery}'`, 1000);
         return;
       }
     }
@@ -417,7 +417,7 @@ class VisualMode extends KeyHandlerMode {
       message = message.slice(0, 12) + "...";
     }
     const plural = this.yankedText.length === 1 ? "" : "s";
-    HUD.show(`Yanked ${this.yankedText.length} character${plural}: \"${message}\".`, 2500);
+    HUD.show(`yanked ${this.yankedText.length} character${plural}: \"${message}\"`, 2500);
 
     return this.yankedText;
   }
@@ -563,7 +563,7 @@ class CaretMode extends VisualMode {
         this.establishInitialSelectionAnchor();
         if (this.selection.type === "None") {
           this.exit();
-          HUD.show("create a selection before entering visual mode.", 2500);
+          HUD.show("create a selection before entering visual mode", 2500);
           return;
         }
         break;
