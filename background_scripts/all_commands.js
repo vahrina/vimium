@@ -18,70 +18,70 @@ const allCommands = [
 
   {
     name: "scrollDown",
-    desc: "Scroll down",
+    desc: "scroll down",
     group: "navigation",
   },
 
   {
     name: "scrollUp",
-    desc: "Scroll up",
+    desc: "scroll up",
     group: "navigation",
   },
 
   {
     name: "scrollToTop",
-    desc: "Scroll to the top of the page",
+    desc: "scroll to the top of the page",
     group: "navigation",
     noRepeat: true,
   },
 
   {
     name: "scrollToBottom",
-    desc: "Scroll to the bottom of the page",
+    desc: "scroll to the bottom of the page",
     group: "navigation",
     noRepeat: true,
   },
 
   {
     name: "scrollPageDown",
-    desc: "Scroll a half page down",
+    desc: "scroll a half page down",
     group: "navigation",
   },
 
   {
     name: "scrollPageUp",
-    desc: "Scroll a half page up",
+    desc: "scroll a half page up",
     group: "navigation",
   },
 
   {
     name: "scrollFullPageDown",
-    desc: "Scroll a full page down",
+    desc: "scroll a full page down",
     group: "navigation",
   },
 
   {
     name: "scrollFullPageUp",
-    desc: "Scroll a full page up",
+    desc: "scroll a full page up",
     group: "navigation",
   },
 
   {
     name: "scrollLeft",
-    desc: "Scroll left",
+    desc: "scroll left",
     group: "navigation",
   },
 
   {
     name: "scrollRight",
-    desc: "Scroll right",
+    desc: "scroll right",
     group: "navigation",
     advanced: true,
   },
 
   {
     name: "scrollToLeft",
-    desc: "Scroll all the way to the left",
+    desc: "scroll all the way to the left",
     group: "navigation",
     advanced: true,
     noRepeat: true,
@@ -89,7 +89,7 @@ const allCommands = [
 
   {
     name: "scrollToRight",
-    desc: "Scroll all the way to the right",
+    desc: "scroll all the way to the right",
     group: "navigation",
     advanced: true,
     noRepeat: true,
@@ -97,7 +97,7 @@ const allCommands = [
 
   {
     name: "reload",
-    desc: "Reload the page",
+    desc: "reload the page",
     group: "navigation",
     background: true,
     options: {
@@ -108,21 +108,21 @@ const allCommands = [
 
   {
     name: "copyCurrentUrl",
-    desc: "Copy the current URL to the clipboard",
+    desc: "copy the current url to the clipboard",
     group: "navigation",
     noRepeat: true,
   },
 
   {
     name: "openCopiedUrlInCurrentTab",
-    desc: "Open the clipboard's URL in the current tab",
+    desc: "open the clipboard's url in the current tab",
     group: "navigation",
     noRepeat: true,
   },
 
   {
     name: "openCopiedUrlInNewTab",
-    desc: "Open the clipboard's URL in a new tab",
+    desc: "open the clipboard's url in a new tab",
     group: "navigation",
     noRepeat: true,
     options: {
@@ -133,14 +133,14 @@ const allCommands = [
 
   {
     name: "goUp",
-    desc: "Go up the URL hierarchy",
+    desc: "go up the url hierarchy",
     group: "navigation",
     advanced: true,
   },
 
   {
     name: "goToRoot",
-    desc: "Go to the root of current URL hierarchy",
+    desc: "go to the root of current url hierarchy",
     group: "navigation",
     advanced: true,
     noRepeat: true,
@@ -148,21 +148,21 @@ const allCommands = [
 
   {
     name: "enterInsertMode",
-    desc: "Enter insert mode",
+    desc: "enter insert mode",
     group: "navigation",
     noRepeat: true,
   },
 
   {
     name: "enterVisualMode",
-    desc: "Enter visual mode",
+    desc: "enter visual mode",
     group: "navigation",
     noRepeat: true,
   },
 
   {
     name: "enterVisualLineMode",
-    desc: "Enter visual line mode",
+    desc: "enter visual line mode",
     group: "navigation",
     advanced: true,
     noRepeat: true,
@@ -170,7 +170,7 @@ const allCommands = [
 
   {
     name: "passNextKey",
-    desc: "Pass the next key to the page",
+    desc: "pass the next key to the page",
     options: {
       normal: "Optional. Enter Vimium's normal mode, and ignore any defined pass keys.",
     },
@@ -180,14 +180,14 @@ const allCommands = [
 
   {
     name: "focusInput",
-    desc: "Focus the first text input on the page",
+    desc: "focus the first text input on the page",
     group: "navigation",
     noRepeat: true,
   },
 
   {
     name: "LinkHints.activateMode",
-    desc: "Open a link in the current tab",
+    desc: "open a link in the current tab",
     options: {
       action: "one of `hover`, `focus`, `copy-text`. When a link is selected, " +
         "instead of clicking on the link, perform the specified action.",
@@ -197,20 +197,20 @@ const allCommands = [
   },
 
   {
-    name: "LinkHints.activateModeToOpenInNewTab",
-    desc: "Open a link in a new tab",
+    name: "linkhints.activatemodetoopeninnewtab",
+    desc: "open a link in a new tab",
     group: "navigation",
   },
 
   {
     name: "LinkHints.activateModeToOpenInNewForegroundTab",
-    desc: "Open a link in a new tab & switch to it",
+    desc: "open a link in a new tab & switch to it",
     group: "navigation",
   },
 
   {
     name: "LinkHints.activateModeWithQueue",
-    desc: "Open multiple links in a new tab",
+    desc: "open multiple links in a new tab",
     group: "navigation",
     advanced: true,
     noRepeat: true,
@@ -218,28 +218,28 @@ const allCommands = [
 
   {
     name: "LinkHints.activateModeToDownloadLink",
-    desc: "Download link url",
+    desc: "download link url",
     group: "navigation",
     advanced: true,
   },
 
   {
     name: "LinkHints.activateModeToOpenIncognito",
-    desc: "Open a link in incognito window",
+    desc: "open a link in incognito window",
     group: "navigation",
     advanced: true,
   },
 
   {
     name: "LinkHints.activateModeToCopyLinkUrl",
-    desc: "Copy a link URL to the clipboard",
+    desc: "copy a link url to the clipboard",
     group: "navigation",
     advanced: true,
   },
 
   {
     name: "goPrevious",
-    desc: "Follow the link labeled previous or <",
+    desc: "follow the link labeled previous or <",
     group: "navigation",
     advanced: true,
     noRepeat: true,
@@ -247,7 +247,7 @@ const allCommands = [
 
   {
     name: "goNext",
-    desc: "Follow the link labeled next or >",
+    desc: "follow the link labeled next or >",
     group: "navigation",
     advanced: true,
     noRepeat: true,
@@ -255,22 +255,22 @@ const allCommands = [
 
   {
     name: "nextFrame",
-    desc: "Select the next frame on the page",
+    desc: "select the next frame on the page",
     group: "navigation",
     background: true,
   },
 
   {
     name: "mainFrame",
-    desc: "Select the page's main/top frame",
+    desc: "select the page's main/top frame",
     group: "navigation",
     topFrame: true,
     noRepeat: true,
   },
 
   {
-    name: "Marks.activateCreateMode",
-    desc: "Create a new mark",
+    name: "marks.activatecreatemode",
+    desc: "create a new mark",
     details: "Do this by typing the key bound to this command, and then a letter. " +
       "This will set a mark bound to that letter. Lowercase letters are local marks and uppercase " +
       "letters are global marks.",
@@ -286,7 +286,7 @@ const allCommands = [
 
   {
     name: "Marks.activateGotoMode",
-    desc: "Jump to a mark",
+    desc: "jump to a mark",
     options: {
       swap: "Swap global and local marks. This option exists because in a browser, global marks " +
         "are generally more useful than local marks, and so it may be desirable to make lowercase " +
@@ -303,7 +303,7 @@ const allCommands = [
 
   {
     name: "Vomnibar.activate",
-    desc: "Open URL, bookmark or history entry",
+    desc: "open url, bookmark or history entry",
     options: {
       query: "The text to prefill the Vomnibar with.",
       keyword: 'The keyword of a search engine defined in the "Custom search engines" ' +
@@ -316,7 +316,7 @@ const allCommands = [
 
   {
     name: "Vomnibar.activateInNewTab",
-    desc: "Open URL, bookmark or history entry in a new tab",
+    desc: "open url, bookmark or history entry in a new tab",
     group: "vomnibar",
     options: {
       query: "The text to prefill the Vomnibar with.",
@@ -329,7 +329,7 @@ const allCommands = [
 
   {
     name: "Vomnibar.activateBookmarks",
-    desc: "Open a bookmark",
+    desc: "open a bookmark",
     group: "vomnibar",
     options: {
       query: "The text to prefill the Vomnibar with.",
@@ -340,7 +340,7 @@ const allCommands = [
 
   {
     name: "Vomnibar.activateBookmarksInNewTab",
-    desc: "Open a bookmark in a new tab",
+    desc: "open a bookmark in a new tab",
     group: "vomnibar",
     options: {
       query: "The text to prefill the Vomnibar with.",
@@ -351,7 +351,7 @@ const allCommands = [
 
   {
     name: "Vomnibar.activateTabSelection",
-    desc: "Search through your open tabs",
+    desc: "search through your open tabs",
     group: "vomnibar",
     topFrame: true,
     noRepeat: true,
@@ -359,7 +359,7 @@ const allCommands = [
 
   {
     name: "Vomnibar.activateEditUrl",
-    desc: "Edit the current URL",
+    desc: "edit the current url",
     group: "vomnibar",
     topFrame: true,
     noRepeat: true,
@@ -367,7 +367,7 @@ const allCommands = [
 
   {
     name: "Vomnibar.activateEditUrlInNewTab",
-    desc: "Edit the current URL and open in a new tab",
+    desc: "edit the current url and open in a new tab",
     group: "vomnibar",
     topFrame: true,
     noRepeat: true,
@@ -375,7 +375,7 @@ const allCommands = [
 
   {
     name: "Vomnibar.activateCommandSelection",
-    desc: "Execute a Vimium command",
+    desc: "execute a vimium command",
     group: "vomnibar",
     topFrame: true,
     noRepeat: true,
@@ -387,33 +387,33 @@ const allCommands = [
 
   {
     name: "enterFindMode",
-    desc: "Enter find mode.",
+    desc: "enter find mode.",
     group: "find",
     noRepeat: true,
   },
 
   {
     name: "performFind",
-    desc: "Cycle forward to the next find match",
+    desc: "cycle forward to the next find match",
     group: "find",
   },
 
   {
     name: "performBackwardsFind",
-    desc: "Cycle backward to the previous find match",
+    desc: "cycle backward to the previous find match",
     group: "find",
   },
 
   {
     name: "findSelected",
-    desc: "Find the selected text",
+    desc: "find the selected text",
     group: "find",
     advanced: true,
   },
 
   {
     name: "findSelectedBackwards",
-    desc: "Find the selected text, searching backwards",
+    desc: "find the selected text, searching backwards",
     group: "find",
     advanced: true,
   },
@@ -424,13 +424,13 @@ const allCommands = [
 
   {
     name: "goBack",
-    desc: "Go back in history",
+    desc: "go back in history",
     group: "history",
   },
 
   {
     name: "goForward",
-    desc: "Go forward in history",
+    desc: "go forward in history",
     group: "history",
   },
 
@@ -439,8 +439,8 @@ const allCommands = [
   //
 
   {
-    name: "createTab",
-    desc: "Create new tab",
+    name: "createtab",
+    desc: "create new tab",
     options: {
       "(any url)": "Open this URL, rather than the browser's new tab page. " +
         "E.g.: `map X createTab https://example.com`",
@@ -451,33 +451,33 @@ const allCommands = [
     },
     group: "tabs",
     background: true,
-    repeatLimit: 20,
+    repeatlimit: 20,
   },
 
   {
     name: "previousTab",
-    desc: "Go one tab left",
+    desc: "go one tab left",
     group: "tabs",
     background: true,
   },
 
   {
     name: "nextTab",
-    desc: "Go one tab right",
+    desc: "go one tab right",
     group: "tabs",
     background: true,
   },
 
   {
     name: "visitPreviousTab",
-    desc: "Go to previously-visited tab",
+    desc: "go to previously-visited tab",
     group: "tabs",
     background: true,
   },
 
   {
     name: "firstTab",
-    desc: "Go to the first tab",
+    desc: "go to the first tab",
     group: "tabs",
     background: true,
     noRepeat: true,
@@ -485,7 +485,7 @@ const allCommands = [
 
   {
     name: "lastTab",
-    desc: "Go to the last tab",
+    desc: "go to the last tab",
     group: "tabs",
     background: true,
     noRepeat: true,
@@ -493,7 +493,7 @@ const allCommands = [
 
   {
     name: "duplicateTab",
-    desc: "Duplicate current tab",
+    desc: "duplicate current tab",
     group: "tabs",
     background: true,
     repeatLimit: 20,
@@ -501,7 +501,7 @@ const allCommands = [
 
   {
     name: "togglePinTab",
-    desc: "Pin or unpin current tab",
+    desc: "pin or unpin current tab",
     group: "tabs",
     background: true,
     noRepeat: true,
@@ -509,7 +509,7 @@ const allCommands = [
 
   {
     name: "toggleMuteTab",
-    desc: "Mute or unmute current tab",
+    desc: "mute or unmute current tab",
     options: {
       all: "Mute all tabs.",
       other: "Mute every tab except the current one.",
@@ -521,7 +521,7 @@ const allCommands = [
 
   {
     name: "removeTab",
-    desc: "Close current tab",
+    desc: "close current tab",
     group: "tabs",
     background: true,
     // Don't close (in one command invocation) more than the number of tabs that can be re-opened by
@@ -531,7 +531,7 @@ const allCommands = [
 
   {
     name: "restoreTab",
-    desc: "Restore closed tab",
+    desc: "restore closed tab",
     group: "tabs",
     background: true,
     repeatLimit: 20,
@@ -539,7 +539,7 @@ const allCommands = [
 
   {
     name: "moveTabToNewWindow",
-    desc: "Move tab to new window",
+    desc: "move tab to new window",
     group: "tabs",
     advanced: true,
     background: true,
@@ -548,7 +548,7 @@ const allCommands = [
 
   {
     name: "closeTabsOnLeft",
-    desc: "Close tabs on the left",
+    desc: "close tabs on the left",
     group: "tabs",
     advanced: true,
     background: true,
@@ -556,7 +556,7 @@ const allCommands = [
 
   {
     name: "closeTabsOnRight",
-    desc: "Close tabs on the right",
+    desc: "close tabs on the right",
     group: "tabs",
     advanced: true,
     background: true,
@@ -564,7 +564,7 @@ const allCommands = [
 
   {
     name: "closeOtherTabs",
-    desc: "Close all other tabs",
+    desc: "close all other tabs",
     group: "tabs",
     advanced: true,
     background: true,
@@ -573,7 +573,7 @@ const allCommands = [
 
   {
     name: "moveTabLeft",
-    desc: "Move tab to the left",
+    desc: "move tab to the left",
     group: "tabs",
     advanced: true,
     background: true,
@@ -581,7 +581,7 @@ const allCommands = [
 
   {
     name: "moveTabRight",
-    desc: "Move tab to the right",
+    desc: "move tab to the right",
     group: "tabs",
     advanced: true,
     background: true,
@@ -589,7 +589,7 @@ const allCommands = [
 
   {
     name: "setZoom",
-    desc: "Set zoom",
+    desc: "set zoom",
     group: "tabs",
     advanced: true,
     background: true,
@@ -601,7 +601,7 @@ const allCommands = [
 
   {
     name: "zoomIn",
-    desc: "Zoom in",
+    desc: "zoom in",
     group: "tabs",
     advanced: true,
     background: true,
@@ -609,7 +609,7 @@ const allCommands = [
 
   {
     name: "zoomOut",
-    desc: "Zoom out",
+    desc: "zoom out",
     group: "tabs",
     advanced: true,
     background: true,
@@ -617,7 +617,7 @@ const allCommands = [
 
   {
     name: "zoomReset",
-    desc: "Reset zoom",
+    desc: "reset zoom",
     group: "tabs",
     advanced: true,
     background: true,
@@ -630,7 +630,7 @@ const allCommands = [
 
   {
     name: "toggleViewSource",
-    desc: "View page source",
+    desc: "view page source",
     group: "misc",
     advanced: true,
     noRepeat: true,
@@ -638,7 +638,7 @@ const allCommands = [
 
   {
     name: "showHelp",
-    desc: "Show help",
+    desc: "show help",
     group: "misc",
     noRepeat: true,
     topFrame: true,

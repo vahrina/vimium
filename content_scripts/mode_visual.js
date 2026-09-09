@@ -271,7 +271,7 @@ class VisualMode extends KeyHandlerMode {
 
     super.init(Object.assign(options, {
       name: options.name != null ? options.name : "visual",
-      indicator: options.indicator != null ? options.indicator : "Visual mode",
+      indicator: options.indicator != null ? options.indicator : "visual mode",
       // Visual mode, visual-line mode and caret mode each displace each other.
       singleton: "visual-mode-group",
       exitOnEscape: true,
@@ -358,7 +358,7 @@ class VisualMode extends KeyHandlerMode {
 
       if ((this.selection.type !== "Range") && (this.name !== "caret")) {
         new CaretMode().init();
-        return HUD.show("No usable selection, entering caret mode...", 2500);
+        return HUD.show("no usable selection, entering caret mode...", 2500);
       }
     }
   }
@@ -499,7 +499,7 @@ class VisualLineMode extends VisualMode {
     if (options == null) {
       options = {};
     }
-    super.init(Object.assign(options, { name: "visual/line", indicator: "Visual mode (line)" }));
+    super.init(Object.assign(options, { name: "visual/line", indicator: "visual mode (line)" }));
     return this.extendSelection();
   }
 
@@ -554,7 +554,7 @@ class CaretMode extends VisualMode {
       options = {};
     }
     super.init(
-      Object.assign(options, { name: "caret", indicator: "Caret mode", alterMethod: "move" }),
+      Object.assign(options, { name: "caret", indicator: "caret mode", alterMethod: "move" }),
     );
 
     // Establish the initial caret.
@@ -563,7 +563,7 @@ class CaretMode extends VisualMode {
         this.establishInitialSelectionAnchor();
         if (this.selection.type === "None") {
           this.exit();
-          HUD.show("Create a selection before entering visual mode.", 2500);
+          HUD.show("create a selection before entering visual mode.", 2500);
           return;
         }
         break;

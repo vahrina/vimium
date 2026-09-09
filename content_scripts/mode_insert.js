@@ -59,7 +59,7 @@ class InsertMode extends Mode {
 
     const defaults = {
       name: "insert",
-      indicator: !this.permanent && !Settings.get("hideHud") ? "Insert mode" : null,
+      indicator: !this.permanent && !Settings.get("hideHud") ? "insert mode" : null,
       keypress: handleKeyEvent,
       keydown: handleKeyEvent,
     };
