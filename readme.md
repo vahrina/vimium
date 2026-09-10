@@ -169,3 +169,5 @@ keyboard
 ## Additional Information
 
 Since this is fork primarily includes subjective preferences, the scope of this project will be limited - contributing, changelogs, credits & licensing can all be found in [philc](https://github.com/philc/vimium)'s repo
+
+Note that I focused on editing only the **dark mode** version of this extension. It may or may not match/look fine in white mode, I don't intend to edit/touch/double check it

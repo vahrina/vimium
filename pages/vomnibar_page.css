@@ -160,33 +160,33 @@ ul {
   }
 
   #vomnibar li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px dashed #4f4f4f;
   }
 
   #vomnibar li.selected {
-    background-color: #37383a;
+    background-color: #3d4a5c;
   }
 
   #vomnibar li .url {
     white-space: nowrap;
-    color: #5ca1f7;
+    color: #a8c8f0;
   }
 
   #vomnibar li em,
   #vomnibar li .title {
-    color: white;
+    color: #f0e9f5;
   }
 
   #vomnibar li .source {
-    color: #9aa0a6;
+    color: #b8b5c4;
   }
 
   #vomnibar li .match {
-    color: white;
+    color: #fdf6e3;
   }
 
   #vomnibar li em .match,
   #vomnibar li .title .match {
-    color: white;
+    color: #fdf6e3;
   }
 }

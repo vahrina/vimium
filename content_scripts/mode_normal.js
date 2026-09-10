@@ -177,13 +177,15 @@ const NormalModeCommands = {
   copyCurrentUrl() {
     chrome.runtime.sendMessage({ handler: "getCurrentTabUrl" }, function (url) {
       HUD.copyToClipboard(url);
-      // This length is determined empirically based on a 350px width of the HUD. An alternate
-      // solution is to have the HUD ellipsize based on its width.
-      const maxLength = 40;
+      // The length (40) was previously determined based on the 350px width of the HUD
+      // An alternate solution is to have the HUD ellipsize based on its width.
+      // Because the HUD takes up the entire width, the limit is increased, essentially doubled
+      // This was tested on a WQHD (3440x1440) Monitor and may look cramped on smaller monitors
+      const maxLength = 80;
       if (url.length > maxLength) {
-        url = url.slice(0, maxLength - 2) + "...";
+        url = url.slice(0, maxLength - 2) + "..";
       }
-      HUD.show(`Yanked ${url}`, 2000);
+      HUD.show(`yanked ${url}`, 2000);
     });
   },
 
