@@ -30,14 +30,14 @@ export async function init() {
   await Settings.onLoaded();
 
   const shortcutLabel = document.querySelector("#shortcut-to-save-all");
-  shortcutLabel.textContent = KeyboardUtils.platform == "Mac" ? "Cmd-Enter" : "Ctrl-Enter";
+  shortcutLabel.textContent = KeyboardUtils.platform == "Mac" ? "cmd-enter" : "ctrl-enter";
 
   const saveButton = document.querySelector("#save");
 
   const onUpdated = () => {
     maintainNewTabUrlView();
     saveButton.disabled = false;
-    saveButton.textContent = "Save changes";
+    saveButton.textContent = "save changes";
   };
 
   for (const el of document.querySelectorAll("input, textarea")) {
@@ -76,7 +76,7 @@ export async function init() {
 
   globalThis.onbeforeunload = () => {
     if (!saveButton.disabled) {
-      return "You have unsaved changes to options.";
+      return "you have unsaved changes to options";
     }
   };
 
@@ -105,7 +105,7 @@ export function getOptionEl(optionName) {
 // Invoked when the user clicks the "reset" button next to an option's text field.
 function resetInputValue(event) {
   const parentDiv = event.target.parentNode.parentNode;
-  console.assert(parentDiv?.tagName == "DIV", "Expected parent to be a div", event.target);
+  console.assert(parentDiv?.tagName == "DIV", "expected parent to be a div", event.target);
   const input = parentDiv.querySelector("input") || parentDiv.querySelector("textarea");
   const optionName = input.name;
   const defaultValue = Settings.defaultOptions[optionName];
@@ -133,7 +133,7 @@ function setFormFromSettings(settings) {
         break;
       }
       default:
-        throw new Error(`Unrecognized option type ${optionType}`);
+        throw new Error(`unrecognized option type ${optionType}`);
     }
   }
 
@@ -165,7 +165,7 @@ function getSettingsFromForm() {
         break;
       }
       default:
-        throw new Error(`Unrecognized option type ${optionType}`);
+        throw new Error(`unrecognized option type ${optionType}`);
     }
     if (value !== null) {
       settings[optionName] = value;
@@ -199,17 +199,17 @@ function getValidationErrors() {
   // linkHintCharacters field.
   text = getOptionEl("linkHintCharacters").value.trim();
   if (text != removeDuplicateChars(text)) {
-    results["linkHintCharacters"] = "This cannot contain duplicate characters.";
+    results["linkHintCharacters"] = "this cannot contain duplicate characters";
   } else if (text.length <= 1) {
-    results["linkHintCharacters"] = "This must be at least two characters long.";
+    results["linkHintCharacters"] = "this must be at least two characters long";
   }
 
   // linkHintNumbers field.
   text = getOptionEl("linkHintNumbers").value.trim();
   if (text != removeDuplicateChars(text)) {
-    results["linkHintNumbers"] = "This cannot contain duplicate characters.";
+    results["linkHintNumbers"] = "this cannot contain duplicate characters";
   } else if (text.length <= 1) {
-    results["linkHintNumbers"] = "This must be at least two characters long.";
+    results["linkHintNumbers"] = "this must be at least two characters long";
   }
 
   return results;
@@ -275,7 +275,7 @@ export async function saveOptions() {
   await Settings.setSettings(getSettingsFromForm());
   const el = document.querySelector("#save");
   el.disabled = true;
-  el.textContent = "Saved";
+  el.textcontent = "saved";
 }
 
 function showElement(el, visible) {
@@ -355,8 +355,8 @@ function onUploadBackupClicked() {
       setFormFromSettings(Settings.getSettings());
       const saveButton = document.querySelector("#save");
       saveButton.disabled = true;
-      saveButton.textContent = "Saved";
-      alert("Settings have been restored from the backup.");
+      savebutton.textcontent = "saved";
+      alert("settings have been restored from the backup");
     };
   }
 }

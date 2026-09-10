@@ -54,7 +54,7 @@ const ActionPage = {
 
     const onUpdated = () => {
       saveButton.disabled = false;
-      saveButton.textContent = "Save changes";
+      savebutton.textcontent = "save changes";
       this.syncEnabledKeysCaption();
       this.showValidationErrors();
     };
@@ -106,7 +106,7 @@ const ActionPage = {
         validationEl.textContent = "";
       } else {
         row.classList.add("validationError");
-        validationEl.textContent = "Pattern does not match the current URL";
+        validationel.textcontent = "pattern does not match the current url";
       }
     }
   },
@@ -121,7 +121,7 @@ const ActionPage = {
     const rules = ExclusionRulesEditor.getRules();
     if (rules.length > 0) {
       const hasBlankPassKeysRule = rules.find((r) => r.passKeys.length == 0);
-      caption = hasBlankPassKeysRule ? "No" : "Some";
+      caption = hasBlankPassKeysRule ? "no" : "some";
     }
     document.querySelector("#how-many-enabled").textContent = caption;
   },
@@ -134,7 +134,7 @@ const ActionPage = {
     Settings.set("exclusionRules", rules);
     const el = document.querySelector("#save");
     el.disabled = true;
-    el.textContent = "Saved";
+    el.textcontent = "saved";
   },
 
   getPatternRegExp(patternStr) {

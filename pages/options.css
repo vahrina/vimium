@@ -5,9 +5,10 @@
 }
 
 body {
-  font: 14px "DejaVu Sans", "Arial", sans-serif;
+  font: 16px monospace;
   color: #303942;
   margin: 0;
+  user-select: none;
 }
 
 a,
@@ -22,13 +23,13 @@ a:active {
 div#wrapper,
 #footer-content {
   max-width: 1050px;
-  margin: 0 25px;
+  margin: 0 auto;
 }
 
 header {
   font-size: 18px;
   font-weight: normal;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px dashed #4f4f4f !important;
   padding: 20px 0 15px 0;
   width: 100%;
 }
@@ -45,10 +46,38 @@ button {
 }
 
 input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
   -webkit-user-select: none;
   user-select: none;
   margin: 0;
   margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  border: transparent;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:focus {
+  border: 2px dashed #4f4f4f;
+}
+
+/* the checkbox */
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--vimium-foreground-text-color, #444);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 input[type="radio"] {
@@ -78,6 +107,11 @@ pre {
 input,
 textarea {
   box-sizing: border-box;
+  transition: all 200ms ease;
+}
+
+input:focus {
+  border: 2px dashed #4f4f4f !important;
 }
 
 textarea {
@@ -320,13 +354,13 @@ input[name="passKeys"],
 #exclusion-add-button {
   float: right;
   /* Add the spacing between the table's cells to the right margin of this button. */
-  margin-right: calc(var(--closeButtonWidth) + 4px);
-  margin-top: 10px;
+  margin-right: 10px calc(var(--closeButtonWidth) + 4px);
+  padding: 4px 14px;
+  margin-top: .3rem;
 }
 
 footer {
   background: #f5f5f5;
-  border-top: 1px solid #979ca0;
   position: fixed;
   bottom: 0px;
   left: 0;
@@ -363,6 +397,56 @@ input#upload-backup {
   max-width: 400px;
 }
 
+/* clickable links */
+.ext {
+  color: #a8c8f0;
+  text-decoration: none;
+  cursor: default;
+}
+
+.ext:hover {
+  text-decoration: underline;
+}
+
+* {
+  scrollbar-width: none;
+}
+/* although chrome/edge support the rule above,
+* keep this for older/safari support */
+::-webkit-scrollbar {
+  display: none;
+}
+
+#settings-grid-container > span > input[type=number] {
+  padding: .3rem;
+  border: 0;
+  text-align: center;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  caret-color: transparent;
+}
+
+#settings-grid-container > span > input[type="number"]::-webkit-outer-spin-button,
+#settings-grid-container > span > input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input#upload-backup::-webkit-file-upload-button {
+  font: 14px monospace;
+  text-transform: lowercase;
+  border: 0;
+  padding: 4px 10px;
+  background-color: #2b2a32;
+  color: var(--vimium-foreground-text-color);
+  cursor: default;
+  margin-right: 8px;
+}
+
+#upload-backup {
+  text-transform: lowercase !important;
+}
+
 @media (prefers-color-scheme: light) {
   button {
     background-image: -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
@@ -397,12 +481,8 @@ input#upload-backup {
 }
 
 @media (prefers-color-scheme: dark) {
-  header {
-    border-bottom: 1px solid #999;
-  }
-
   pre {
-    border-left: 1px solid #666;
+    border-left: 2px dashed #666;
   }
 
   #exclusion-rules .remove {
@@ -425,19 +505,22 @@ input#upload-backup {
      will automatically apply a dark mode style to unstyled buttons, but that doesn't happen on
      other OSes, so to be cross-platform, we have to set these styles ourselves. */
   button {
-    background: none;
     background-color: #2b2a32;
-    border-color: #8f8f9c;
-    border-width: 1px;
+    border: 0;
+    border-radius: 0;
+    padding: .3rem;
     color: var(--vimium-foreground-text-color);
-    text-shadow: none;
+  }
+
+  button:hover {
+    background-color: #35343c;
   }
 
   button[disabled],
   button[disabled]:hover,
   button[disabled]:active {
     color: #75747a;
-    border-color: #75747a;
     background-color: #222127;
+    cursor: not-allowed;
   }
 }

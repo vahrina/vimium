@@ -140,9 +140,12 @@ footer {
     color: var(--vimium-link-color);
   }
 
-  h1,
-  h2 {
+  h1 {
     color: white;
+  }
+
+  h2 {
+    color: #e8d5a8;
   }
 
   h1 .vim {
