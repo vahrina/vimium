@@ -81,10 +81,39 @@ input[type="checkbox"]:checked::after {
 }
 
 input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
-  margin-left: 0;
   margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  border: 2xx solid transparent;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
+
+input[type="radio"]:checked,
+input[type="radio"]:focus {
+  border: 2px dashed #4f4f4f;
+}
+
+/* the dot */
+input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--vimium-foreground-text-color, #444);
+  transform: translate(-50%, -50%);
+}
+
 
 .boolean-label {
   display: flex;
