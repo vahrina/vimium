@@ -10,7 +10,7 @@ spirit of the Vim editor
 - [Chrome](https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)
 - [Edge](https://microsoftedge.microsoft.com/addons/detail/vimium/djmieaghokpkpjfbpelnlkfgfjapaopa)
 - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/vimium-ff/)
-- build from [source](CONTRIBUTING.md#installing-from-source)
+- build from [source](https://github.com/philc/vimium/blob/master/CONTRIBUTING.md#installing-from-source)
 
 See the [docs](https://vimium.github.io/commands/) for every Vimium command and its options
 
@@ -22,7 +22,7 @@ to Vimium on the extension pages of
 ### More documentation
 
 - [FAQ](https://github.com/philc/vimium/wiki/FAQ)
-- [Wiki](https://github.com/philc/vimium/wiki): documentation for the more advanced features
+- [Wiki](https://github.com/philc/vimium/wiki)
 - [Command listing](https://vimium.github.io/commands/)
 
 ## Keyboard Bindings
