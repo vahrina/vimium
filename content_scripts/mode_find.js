@@ -368,7 +368,7 @@ class FindMode extends Mode {
     // Bail out if we don't have any query text.
     const nextQuery = FindMode.getQuery(backwards);
     if (!nextQuery) {
-      HUD.show("No query to find.", 1000);
+      HUD.show("no query to find", 1000);
       return;
     }
 
@@ -379,7 +379,7 @@ class FindMode extends Mode {
       focusFoundLink();
       return newPostFindMode();
     } else {
-      return HUD.show(`No matches for '${FindMode.query.rawQuery}'`, 1000);
+      return HUD.show(`no matches for '${FindMode.query.rawQuery}'`, 1000);
     }
   }
 

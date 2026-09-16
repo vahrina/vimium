@@ -325,7 +325,7 @@ const NormalModeCommands = {
     );
 
     if (visibleInputs.length === 0) {
-      HUD.show("There are no inputs to focus.", 1000);
+      HUD.show("there are no inputs to focus", 1000);
       return;
     }
 
