@@ -361,6 +361,11 @@ textarea:focus {
 #exclusion-rules .remove {
   border: none;
   color: #979ca0;
+  position: relative;
+  top: -2.4px;
+  height: calc(var(--closeButtonWidth) + .5px);
+  border: 2px solid var(--validationErrorColor);
+  /* literally almost pixel perfect */
 }
 
 #exclusion-rules .remove:hover {
@@ -383,7 +388,7 @@ input[name="passKeys"],
 #exclusion-add-button {
   float: right;
   /* Add the spacing between the table's cells to the right margin of this button. */
-  margin-right: 10px calc(var(--closeButtonWidth) + 4px);
+  margin-right: 1.5rem;
   padding: 4px 14px;
   margin-top: .3rem;
 }
